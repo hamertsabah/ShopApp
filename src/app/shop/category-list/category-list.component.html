@@ -1,0 +1,9 @@
+<div class="list-group">
+    <button (click)="changeCategory()" class="list-group-item list-group-item-action">Tüm Ketegoriler</button> <!--Tüm kategoriler linkinin amacı ise clicl event'ine herhangi bir kategori göndermemek, ve changeCategory içine c değeri göndermediğimizden otomatikman null gelecek çünkü öyle başlatmıştık-->
+    <button *ngFor="let c of categories" 
+        (click)="changeCategory(c)"  
+        class="list-group-item list-group-item-action"
+        [class.active]="c==selectedCategory">
+        {{ c.name }}
+    </button> <!--Yani bu o demek olur ki html'den gelen c objesiyle comp içerisindeki selected eşit olması durumunda a etiketine aktive class'ı eklenir demek oluyo -->
+</div>
